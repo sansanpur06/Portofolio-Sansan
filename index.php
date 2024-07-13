@@ -40,6 +40,9 @@
           <li class="nav-item">
             <a class="nav-link" href="#contact">Contact</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#skilss">Skills</a>
+          </li>
         </ul>
       </div>
     </div>
@@ -156,7 +159,7 @@
   <!-- Akhir Contact -->
   <!-- User Skills -->
 
-  <section id="skills">
+  <section id="skilss">
     <div class="container">
       <div id="message"></div>
 
@@ -244,7 +247,7 @@
         $.ajax({
           type: "GET",
           contentType: "application/json",
-          url: "http://localhost/web-portofolio-sansan/si-admin/api/users/read.php?id=",
+          url: "https://sansan06.amisbudi.cloud/web-portofolio-sansan/si-admin/api/users/read.php?id=",
           success: function(response) {
             $("#full_name").text(response.full_name); //mengubah elemen html dengan .text(nilai) atau .html(nilai)
             $("#job_position").text(response.job + " | " + response.expected_position);
@@ -279,7 +282,7 @@
           };
 
           $.ajax({
-            url: "http://localhost/portofolio-sansan/si-admin/api/skills/create.php",
+            url: "https://sansan06.amisbudi.cloud/portofolio-sansan/si-admin/api/skills/create.php",
             method: "POST",
             data: JSON.stringify(formData),
             success: function(data) {
@@ -303,7 +306,7 @@
           };
 
           $.ajax({
-            url: "http://localhost/portofolio-sansan/si-admin/api/skills/update.php",
+            url: "https://sansan06.amisbudi.cloud/portofolio-sansan/si-admin/api/skills/update.php",
             method: "PUT",
             data: JSON.stringify(formData),
             success: function(data) {
@@ -325,7 +328,7 @@
       $.ajax({
         type: "GET",
         contentType: "application/json",
-        url: "http://localhost/portofolio-sansan/si-admin/api/skills/read.php",
+        url: "https://sansan06.amisbudi.cloud/portofolio-sansan/si-admin/api/skills/read.php",
         success: function(response) {
           // console.log(response);
           var json = response.body;
@@ -377,7 +380,7 @@
       $.ajax({
         type: "GET",
         contentType: "application/json",
-        url: "http://localhost/portofolio-sansan/si-admin/api/skills/read.php?id=" + id,
+        url: "https://sansan06.amisbudi.cloud/portofolio-sansan/si-admin/api/skills/read.php?id=" + id,
         success: function(response) {
           $("#id").val(response.id);
           $("#user_id").val(response.user_id);
@@ -394,7 +397,7 @@
     function deleteOne(id) {
       alert("Yakin untuk hapus data ?");
       $.ajax({
-        url: "http://localhost/portofolio-sansan/si-admin/api/skills/delete.php",
+        url: "https://sansan06.amisbudi.cloud/portofolio-sansan/si-admin/api/skills/delete.php",
         method: "DELETE",
         data: JSON.stringify({
           id: id,
